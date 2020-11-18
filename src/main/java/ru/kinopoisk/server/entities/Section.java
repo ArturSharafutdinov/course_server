@@ -2,7 +2,6 @@ package ru.kinopoisk.server.entities;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import ru.kinopoisk.server.models.LongIdEntity;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,6 +10,7 @@ import java.util.Set;
 @DynamicInsert
 @DynamicUpdate
 @Table(name = "SECTION")
+@NamedQuery(name="Section.findAll", query="SELECT e FROM Section e")
 public class Section extends LongIdEntity {
 
     @Column(name = "NAME",nullable = false)
@@ -18,4 +18,17 @@ public class Section extends LongIdEntity {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "section")
     private Set<Article> articles;
+
+    public void setSectionName(String sectionName) {
+        this.sectionName = sectionName;
+    }
+
+    public String getSectionName() {
+        return sectionName;
+    }
+
+    @Override
+    public String toString() {
+        return getId() + " " + sectionName+"\n";
+    }
 }

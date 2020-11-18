@@ -5,7 +5,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 
-public class ArticleDto {
+public class ArticleDto extends LongIdEntityDto {
 
     private String name;
     private String author;

@@ -2,7 +2,6 @@ package ru.kinopoisk.server.entities;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-import ru.kinopoisk.server.models.LongIdEntity;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,6 +10,8 @@ import java.util.Date;
 @DynamicUpdate
 @DynamicInsert
 @Table(name="ARTICLE")
+@NamedQuery(name="Article.findAll", query="SELECT e FROM Article e")
+@NamedQuery(name="Article.findByName", query="SELECT e FROM Article e WHERE e.name = :name")
 public class Article extends LongIdEntity{
     @Column(name="NAME",nullable = false)
     private String name;
@@ -39,4 +40,79 @@ public class Article extends LongIdEntity{
     private Section section;
 
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getRelease() {
+        return release;
+    }
+
+    public void setRelease(Date release) {
+        this.release = release;
+    }
+
+    public String getSmallDescription() {
+        return smallDescription;
+    }
+
+    public void setSmallDescription(String smallDescription) {
+        this.smallDescription = smallDescription;
+    }
+
+    public String getFullDescription() {
+        return fullDescription;
+    }
+
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "name='" + name + '\'' +
+                ", release=" + release +
+                ", smallDescription='" + smallDescription + '\'' +
+                ", fullDescription='" + fullDescription + '\'' +
+                ", views=" + views +
+                ", link='" + link + '\'' +
+                '}';
+    }
 }

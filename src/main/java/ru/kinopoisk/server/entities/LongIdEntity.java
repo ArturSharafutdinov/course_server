@@ -1,4 +1,4 @@
-package ru.kinopoisk.server.models;
+package ru.kinopoisk.server.entities;
 
 import javax.persistence.*;
 

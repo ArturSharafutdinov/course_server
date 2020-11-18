@@ -79,7 +79,7 @@ public class IgromaniaNewsParser {
 
     public static void main(String[] args) throws IOException, ParseException {
         getInfoFromNews();
-        showAllArticles();
+        //showAllArticles();
 
     }
 
