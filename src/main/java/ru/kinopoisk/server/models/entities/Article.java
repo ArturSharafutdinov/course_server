@@ -1,14 +1,9 @@
-package ru.kinopoisk.server.entities;
-
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+package ru.kinopoisk.server.models.entities;
 
 import javax.persistence.*;
 import java.util.Date;
 //asas
 @Entity
-@DynamicUpdate
-@DynamicInsert
 @Table(name="ARTICLE")
 @NamedQuery(name="Article.findAll", query="SELECT e FROM Article e")
 @NamedQuery(name="Article.findByName", query="SELECT e FROM Article e WHERE e.name = :name")

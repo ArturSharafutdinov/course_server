@@ -1,4 +1,4 @@
-package ru.kinopoisk.server.models;
+package ru.kinopoisk.server.models.dto;
 
 public abstract class LongIdEntityDto {
 

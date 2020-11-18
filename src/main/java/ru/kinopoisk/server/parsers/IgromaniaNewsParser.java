@@ -3,23 +3,22 @@ package ru.kinopoisk.server.parsers;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import ru.kinopoisk.server.models.ArticleDto;
+import org.jsoup.safety.Whitelist;
+import ru.kinopoisk.server.models.dto.ArticleDto;
 
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 //Class for parsing igromania news page
 public class IgromaniaNewsParser {
 
     //Templates for parsing
     private static String templateForDiv = "div[class=%s]";
+    private static String templateForHardDiv = "div[class=%s][itemprop=articleBody][data-io-article-url=%s]";
     private static String templateForSpan = "span[class=%s]";
     private static String templateForImage = "img[class=%s]";
     private static String templateForP = "p[class=%s]";
@@ -70,7 +69,20 @@ public class IgromaniaNewsParser {
 
             Date simpleDate = format.parse(date);
 
-            ArticleDto articleDto = new ArticleDto(name, author, simpleDate, smallDesc, "", Integer.parseInt(views), type, link);
+
+
+            Document articlePage = Jsoup.parse(new URL("https://www.igromania.ru/"+link), 3000);
+
+            Element fullDescClass = articlePage.selectFirst(String.format(templateForDiv,"lcol"))
+                    .selectFirst(String.format(templateForDiv,"page_news noselect"))
+                    .selectFirst(String.format(templateForDiv,"page_news_content haveselect"))
+                    .selectFirst(String.format(templateForDiv,"universal_content clearfix","https://www.igromania.ru/"+link))
+                    ;
+
+          String fd = Jsoup.clean(fullDescClass.toString(), Whitelist.none()).replaceAll("&nbsp;"," ");
+          int igro=fd.lastIndexOf("Больше на Игромании");
+          String fullDescription = fd.substring(0,igro).replaceAll("[\\s]{2,}", " ");
+            ArticleDto articleDto = new ArticleDto(name, author, simpleDate, smallDesc, fullDescription, Integer.parseInt(views), type, link);
 
             allArticleDtos.add(articleDto);
 

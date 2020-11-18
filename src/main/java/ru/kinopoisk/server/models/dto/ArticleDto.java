@@ -1,20 +1,26 @@
-package ru.kinopoisk.server.models;
+package ru.kinopoisk.server.models.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.util.Date;
 
 
 public class ArticleDto extends LongIdEntityDto {
 
-    private String name;
-    private String author;
-    private Date release;
-    private String smallDescription;
-    private String fullDescription;
-    private int views;
-    private String type;
-    private String link;
+    private String name;// Name of the article
+
+    private String author;// Author that posted article
+
+    private Date release;// Release date
+
+    private String smallDescription; // Description on the preview block of the article
+
+    private String fullDescription; // Content of the article
+
+    private int views; // Number of views
+
+    private String type; // Section in which the article is located
+
+    private String link; // Link of the full article page
+
 
     public ArticleDto(String name, String author, Date release, String smallDescription, String fullDescription, int views, String type, String link) {
         this.name = name;

@@ -1,16 +1,12 @@
-package ru.kinopoisk.server.entities;
-
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+package ru.kinopoisk.server.models.entities;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@DynamicInsert
-@DynamicUpdate
 @Table(name = "AUTHOR")
 @NamedQuery(name="Author.findAll", query="SELECT e FROM Author e")
+@NamedQuery(name="Author.findByName", query="SELECT e FROM Author e where e.authorName=?1")
 public class Author extends LongIdEntity {
 
     @Column(name = "NAME",nullable = false)

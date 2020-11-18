@@ -13,33 +13,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add parser, entities and models for page news">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/ArticleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/AuthorMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/SectionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/LongIdEntityDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/SaveToDbService.java" afterDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add service for pushing parsed data in database">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/621db135-8035-484a-aff9-dd9369a05774.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/621db135-8035-484a-aff9-dd9369a05774.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Section.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/ArticleDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/AuthorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/AuthorDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/LongIdEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/LongIdEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/SectionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/SectionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/JpaExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/entities/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/entities/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/LongIdEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/entities/LongIdEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/entities/Section.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/entities/Section.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/mappers/ArticleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/AuthorMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/mappers/SectionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/dto/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/AuthorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/dto/AuthorDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/LongIdEntityDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/dto/LongIdEntityDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/SectionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/models/dto/SectionDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaNewsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaNewsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/JpaExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/JpaExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/repositories/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/repositories/AuthorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/SaveToDbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/newsDbService/SaveToDbService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Article.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Article.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Author.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Section.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/entities/Section.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/ArticleDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/ArticleDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/AuthorDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/AuthorDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/LongIdEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/SectionDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/models/SectionDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/mappers/ArticleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/mappers/ArticleMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/SaveToDbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/SaveToDbService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,11 +106,11 @@
       </method>
     </configuration>
     <configuration name="SaveToDbService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.services.SaveToDbService" />
+      <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.services.newsDbService.SaveToDbService" />
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ru.kinopoisk.server.services.*" />
+          <option name="PATTERN" value="ru.kinopoisk.server.services.newsDbService.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,6 +131,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.kinopoisk.server.ServerApplication" />
@@ -144,8 +152,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SaveToDbService" />
-        <item itemvalue="Application.JpaExample" />
         <item itemvalue="Application.IgromaniaNewsParser" />
+        <item itemvalue="Application.JpaExample" />
         <item itemvalue="Application.TopParser" />
       </list>
     </recent_temporary>
@@ -163,7 +171,8 @@
       <workItem from="1605622648966" duration="125000" />
       <workItem from="1605622796887" duration="1004000" />
       <workItem from="1605684394604" duration="7617000" />
-      <workItem from="1605692352830" duration="3608000" />
+      <workItem from="1605692352830" duration="12741000" />
+      <workItem from="1605710836763" duration="649000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -172,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605623124562</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add service for pushing parsed data in database">
+      <created>1605696028845</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605696028845</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +211,8 @@
       <path value="$USER_HOME$" />
     </ignored-roots>
     <MESSAGE value="Add parser, entities and models for page news" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add parser, entities and models for page news" />
+    <MESSAGE value="Add service for pushing parsed data in database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add service for pushing parsed data in database" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -210,6 +227,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605688356477" />
+    <state x="612" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605711226161">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="612" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605711226161" />
     <state x="438" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605617403607">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -218,26 +239,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605617456738" />
-    <state width="1877" height="337" key="GridCell.Tab.0.bottom" timestamp="1605695632956">
+    <state width="1877" height="754" key="GridCell.Tab.0.bottom" timestamp="1605708878823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="337" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605695632956" />
-    <state width="1877" height="337" key="GridCell.Tab.0.center" timestamp="1605695632956">
+    <state width="1877" height="754" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605708878823" />
+    <state width="1877" height="754" key="GridCell.Tab.0.center" timestamp="1605708878823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="337" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605695632956" />
-    <state width="1877" height="337" key="GridCell.Tab.0.left" timestamp="1605695632956">
+    <state width="1877" height="754" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605708878823" />
+    <state width="1877" height="754" key="GridCell.Tab.0.left" timestamp="1605708878823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="337" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605695632955" />
-    <state width="1877" height="337" key="GridCell.Tab.0.right" timestamp="1605695632956">
+    <state width="1877" height="754" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605708878823" />
+    <state width="1877" height="754" key="GridCell.Tab.0.right" timestamp="1605708878823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="337" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605695632956" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1605621023964">
+    <state width="1877" height="754" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605708878823" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1605697131126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1605621023964" />
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1605697131126" />
     <state x="490" y="175" key="Maven.ArtifactSearchDialog" timestamp="1605613791375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -246,10 +267,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605622679810" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605623144804">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605696035834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605623144804" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605696035834" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,7 +1,5 @@
-package ru.kinopoisk.server.models;
+package ru.kinopoisk.server.models.dto;
 
-
-import ru.kinopoisk.server.entities.LongIdEntity;
 
 public class SectionDto extends LongIdEntityDto {
    private String name;
