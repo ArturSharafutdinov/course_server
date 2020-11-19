@@ -1,8 +1,8 @@
 package ru.kinopoisk.server.services.mappers;
 
 import org.springframework.stereotype.Component;
-import ru.kinopoisk.server.models.entities.Article;
-import ru.kinopoisk.server.models.dto.ArticleDto;
+import ru.kinopoisk.server.persistence.domain.Article;
+import ru.kinopoisk.server.persistence.dto.ArticleDto;
 
 @Component
 public class ArticleMapper {
@@ -21,6 +21,22 @@ public class ArticleMapper {
 
 
         return article;
+
+    }
+
+    public ArticleDto mapToDto(Article article){
+        ArticleDto articleDto = new ArticleDto();
+        articleDto.setName(article.getName());
+        articleDto.setLink(article.getLink());
+        articleDto.setFullDescription(article.getFullDescription());
+        articleDto.setSmallDescription(article.getSmallDescription());
+        articleDto.setRelease(article.getRelease());
+        articleDto.setViews(article.getViews());
+        articleDto.setId(article.getId());
+        articleDto.setAuthor(article.getAuthor().getAuthorName());
+        articleDto.setType(article.getSection().getSectionName());
+
+        return articleDto;
 
     }
 

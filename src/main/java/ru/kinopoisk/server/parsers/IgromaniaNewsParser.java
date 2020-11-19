@@ -4,7 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.safety.Whitelist;
-import ru.kinopoisk.server.models.dto.ArticleDto;
+import ru.kinopoisk.server.persistence.dto.ArticleDto;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,11 +34,11 @@ public class IgromaniaNewsParser {
     private static String blockNewsClass = "aubl_item"; //div
 
     //List of news
-    private static List<ArticleDto> allArticleDtos = new LinkedList<>();
+    private List<ArticleDto> allArticleDtos = new LinkedList<>();
 
     //Function get news page in html format, parse it to fill Article object and then save it in articles list
-    public static void getInfoFromNews() throws IOException, ParseException {
-        Document doc = Jsoup.parse(new URL("https://www.igromania.ru/news/"), 3000);
+    public void getInfoFromNews() throws IOException, ParseException {
+        Document doc = Jsoup.parse(new URL("https://www.igromania.ru/news/"), 10000);
         Element newsBlock = doc.selectFirst(String.format(templateForDiv, allNewsClass));
         for (Element news : newsBlock.select(String.format(templateForDiv, blockNewsClass))) {
 
@@ -80,8 +80,14 @@ public class IgromaniaNewsParser {
                     ;
 
           String fd = Jsoup.clean(fullDescClass.toString(), Whitelist.none()).replaceAll("&nbsp;"," ");
-          int igro=fd.lastIndexOf("Больше на Игромании");
-          String fullDescription = fd.substring(0,igro).replaceAll("[\\s]{2,}", " ");
+            String fullDescription;
+          if(fd.contains("Больше на Игромании")) {
+              int igro=fd.lastIndexOf("Больше на Игромании");
+            fullDescription  = fd.substring(0,igro).replaceAll("[\\s]{2,}", " ");
+          }
+          else {
+              fullDescription=fd.replaceAll("[\\s]{2,}", " ");
+          }
             ArticleDto articleDto = new ArticleDto(name, author, simpleDate, smallDesc, fullDescription, Integer.parseInt(views), type, link);
 
             allArticleDtos.add(articleDto);
@@ -89,14 +95,15 @@ public class IgromaniaNewsParser {
         }
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
-        getInfoFromNews();
-        //showAllArticles();
-
-    }
+//    public static void main(String[] args) throws IOException, ParseException {
+//     IgromaniaNewsParser parser = new IgromaniaNewsParser();
+//     parser.getInfoFromNews();
+//        parser.showAllArticles();
+//
+//    }
 
     //Show all articles in console
-    public static void showAllArticles() {
+    public void showAllArticles() {
         for (ArticleDto articleDto : allArticleDtos) {
             System.out.println(articleDto);
             System.out.println();
@@ -104,7 +111,7 @@ public class IgromaniaNewsParser {
     }
 
     //Getter for articles list
-    public static List<ArticleDto> getAllArticles() {
+    public List<ArticleDto> getAllArticles() {
         return allArticleDtos;
     }
 }

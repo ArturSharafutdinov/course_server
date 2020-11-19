@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="igromania" uuid="621db135-8035-484a-aff9-dd9369a05774">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="PostgreSQL - igromania@localhost" uuid="e4cdc739-67b2-48bd-b9c8-64111d9d130e">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-      <driver-properties>
-        <property name="serverTimezone" value="UTC" />
-      </driver-properties>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/igromania</jdbc-url>
     </data-source>
   </component>
 </project>
