@@ -22,7 +22,4 @@ public interface INewsService {
 
     List<Section> getAllSections();
 
-
-
-
 }

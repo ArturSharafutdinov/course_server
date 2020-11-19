@@ -3,10 +3,6 @@ package ru.kinopoisk.server.services.newsDbService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.kinopoisk.server.config.PersistenceJpaConfig;
-import ru.kinopoisk.server.persistence.dao.ArticleRepository;
-import ru.kinopoisk.server.persistence.dao.AuthorRepository;
-import ru.kinopoisk.server.persistence.dao.SectionRepository;
 import ru.kinopoisk.server.persistence.domain.Article;
 import ru.kinopoisk.server.persistence.domain.Author;
 import ru.kinopoisk.server.persistence.domain.Section;
@@ -17,13 +13,9 @@ import ru.kinopoisk.server.services.mappers.ArticleMapper;
 import ru.kinopoisk.server.persistence.dto.ArticleDto;
 import ru.kinopoisk.server.parsers.IgromaniaNewsParser;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
-import java.util.Scanner;
 
 @Service
 public class NewsService implements INewsService{
@@ -130,9 +122,6 @@ public class NewsService implements INewsService{
 
                     Section section = sectionService.findByName(articleDto.getType());
                     article.setSection(section);
-//                    System.out.println(section.getId() + " "+author.getId());
-//                    Scanner in = new Scanner(System.in);
-//                    in.nextLine();
                     articleService.save(article);
                 }
 
@@ -150,9 +139,6 @@ public class NewsService implements INewsService{
                 Section section = sectionService.findByName(articleDto.getType());
                 article.setSection(section);
 
-//                System.out.println(section.getId() + " "+author.getId());
-//                Scanner in = new Scanner(System.in);
-//                in.nextLine();
                 articleService.save(article);
             }
         }

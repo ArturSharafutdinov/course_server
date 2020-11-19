@@ -17,7 +17,6 @@ import ru.kinopoisk.server.services.mappers.UserMapper;
 @Service
 public class UserServiceImpl implements UserService {
 
-    //Кодировать пароль на будущее
     @Autowired
     private PasswordEncoder bCryptPasswordEncoder;
 
@@ -32,7 +31,6 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void submit(UserDto userDto) {
         User user = userMapper.mapToEntity(userDto);
-        //Кодировать пароль в другом месте,так чисто для примера тут.По хорошему SecurityServiceImpl
         String password = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(password);
 
@@ -42,7 +40,6 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(readOnly = true)
     public UserDto getUserById(Long id) {
-        // Assert.notNull(id, "The given id must not be null!"); illegalArgumentException
         User user = userDao.getOne(id);
         return userMapper.mapToDto(user);
     }

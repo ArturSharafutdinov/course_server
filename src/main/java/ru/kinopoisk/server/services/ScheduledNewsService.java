@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import ru.kinopoisk.server.services.newsDbService.NewsService;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.text.ParseException;
 
 @Component

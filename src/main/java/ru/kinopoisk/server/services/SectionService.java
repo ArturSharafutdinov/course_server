@@ -2,9 +2,7 @@ package ru.kinopoisk.server.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.kinopoisk.server.persistence.dao.AuthorRepository;
 import ru.kinopoisk.server.persistence.dao.SectionRepository;
-import ru.kinopoisk.server.persistence.domain.Author;
 import ru.kinopoisk.server.persistence.domain.Section;
 
 import java.util.List;

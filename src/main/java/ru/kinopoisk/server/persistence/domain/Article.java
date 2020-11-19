@@ -2,7 +2,7 @@ package ru.kinopoisk.server.persistence.domain;
 
 import javax.persistence.*;
 import java.util.Date;
-//asas
+
 @Entity
 @Table(name="ARTICLE")
 @NamedQuery(name="Article.findAll", query="SELECT e FROM Article e")

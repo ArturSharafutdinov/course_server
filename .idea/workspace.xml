@@ -13,13 +13,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add auth, remake newsService and change db connection from mysql to postgres, add repos and services for news dtos and entities, remanage folders">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/ScheduledNewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/DataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/ServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/DataLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/ServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/ServerApplication.class" afterDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add ScheduledNewsService to parse page every 5 min">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/config/CorsConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +170,7 @@
       <workItem from="1605767163893" duration="9991000" />
       <workItem from="1605778026225" duration="438000" />
       <workItem from="1605780265734" duration="5472000" />
-      <workItem from="1605785794207" duration="8369000" />
+      <workItem from="1605785794207" duration="8649000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -205,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605793217061</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add ScheduledNewsService to parse page every 5 min">
+      <created>1605794989308</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605794989308</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +233,8 @@
     <MESSAGE value="Add service for pushing parsed data in database" />
     <MESSAGE value="Complete news parser, remake structure of folders" />
     <MESSAGE value="Add auth, remake newsService and change db connection from mysql to postgres, add repos and services for news dtos and entities, remanage folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add auth, remake newsService and change db connection from mysql to postgres, add repos and services for news dtos and entities, remanage folders" />
+    <MESSAGE value="Add ScheduledNewsService to parse page every 5 min" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ScheduledNewsService to parse page every 5 min" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -258,38 +261,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605781588624" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.0.center" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.0.left" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.0.right" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.1.bottom" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.1.bottom" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.1.center" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.1.center" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.1.left" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.1.left" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
-    <state width="1877" height="270" key="GridCell.Tab.1.right" timestamp="1605794040915">
+    <state width="1877" height="882" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
+    <state width="1877" height="882" key="GridCell.Tab.1.right" timestamp="1605794866603">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605794040915" />
+    <state width="1877" height="882" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605794866603" />
     <state width="1877" height="706" key="GridCell.Tab.2.bottom" timestamp="1605789948822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -318,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605622679810" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605793222480">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605794995552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605793222480" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605794995552" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
