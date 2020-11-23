@@ -95,12 +95,22 @@ public class IgromaniaNewsParser {
         }
     }
 
-//    public static void main(String[] args) throws IOException, ParseException {
-//     IgromaniaNewsParser parser = new IgromaniaNewsParser();
-//     parser.getInfoFromNews();
-//        parser.showAllArticles();
-//
-//    }
+
+    public int getViewsFromArticleByUrl(String link){
+        int newViews=-1;
+        boolean isDropped=false;
+        while(!isDropped) {
+            try {
+                Document articlePage = Jsoup.parse(new URL("https://www.igromania.ru/" + link), 3000);
+                Element infoBlock = articlePage.selectFirst(String.format(templateForDiv, "info_block_botrt"));
+                newViews = Integer.parseInt(infoBlock.text().split(" ")[1]);
+                isDropped = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return newViews;
+    }
 
     //Show all articles in console
     public void showAllArticles() {

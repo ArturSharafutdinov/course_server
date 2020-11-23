@@ -1,4 +1,4 @@
-package ru.kinopoisk.server.services;
+package ru.kinopoisk.server.services.schedulers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class ScheduledNewsService {
     NewsService newsService;
 
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 600000)
     public void retakeNews(){
         boolean isDropped=false;
         while(!isDropped)

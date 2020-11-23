@@ -41,6 +41,17 @@ public class NewsService implements INewsService{
         articles=parser.getAllArticles();
     }
 
+    public void updateAllArticlesViews(){
+        IgromaniaNewsParser parser = new IgromaniaNewsParser();
+        List<Article> articlesToUpdate = articleService.getAll();
+        for (Article article : articlesToUpdate){
+                int newViews = parser.getViewsFromArticleByUrl(article.getLink());
+                article.setViews(newViews);
+                articleService.save(article);
+            }
+
+        }
+
     // Save authors from articleDto field author
     public void saveAuthorToDb(String authorName){
        List<Author> authors = authorService.getAll();
