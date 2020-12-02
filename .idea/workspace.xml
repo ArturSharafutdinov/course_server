@@ -13,12 +13,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add parser for update views for all articles, add tasks file and scheduler for views updater">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaGamesParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dto/GameDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/utils/Constraints.java" afterDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add GameDto, Constraints class for templates like date,links,tags. Add logic for IgromaniaGamesParser">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/interfaces/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaGamesParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaGamesParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaNewsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaNewsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dto/GameDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dto/GameDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/utils/Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/utils/Constraints.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -78,7 +79,7 @@
       <recent name="C:\Users\Артур\Desktop\server\src\main\java\ru\kinopoisk\server\security" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.IgromaniaNewsParser">
+  <component name="RunManager" selected="Application.IgromaniaGamesParser">
     <configuration name="IgromaniaGamesParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.parsers.IgromaniaGamesParser" />
       <module name="server" />
@@ -164,8 +165,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.IgromaniaNewsParser" />
         <item itemvalue="Application.IgromaniaGamesParser" />
+        <item itemvalue="Application.IgromaniaNewsParser" />
         <item itemvalue="Application.NewsService" />
         <item itemvalue="Application.JpaExample" />
         <item itemvalue="Application.TopParser" />
@@ -194,7 +195,11 @@
       <workItem from="1605785794207" duration="12473000" />
       <workItem from="1606144488393" duration="1235000" />
       <workItem from="1606146185347" duration="3018000" />
-      <workItem from="1606230268127" duration="2577000" />
+      <workItem from="1606230268127" duration="2814000" />
+      <workItem from="1606809398955" duration="2000" />
+      <workItem from="1606817402448" duration="4646000" />
+      <workItem from="1606826787026" duration="2000" />
+      <workItem from="1606906501490" duration="5355000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -245,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606149699898</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add GameDto, Constraints class for templates like date,links,tags. Add logic for IgromaniaGamesParser">
+      <created>1606233090226</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606233090226</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +286,8 @@
     <MESSAGE value="Add ScheduledNewsService to parse page every 5 min" />
     <MESSAGE value="Removed all unnecessary libraries" />
     <MESSAGE value="Add parser for update views for all articles, add tasks file and scheduler for views updater" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add parser for update views for all articles, add tasks file and scheduler for views updater" />
+    <MESSAGE value="Add GameDto, Constraints class for templates like date,links,tags. Add logic for IgromaniaGamesParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GameDto, Constraints class for templates like date,links,tags. Add logic for IgromaniaGamesParser" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -289,10 +302,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605785218448" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1606232158676">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1606911027309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606232158676" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606911027309" />
     <state x="612" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605711226161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -309,38 +322,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="261" key="#toString()_Generation_Settings/0.0.1920.1040@0.0.1920.1040" timestamp="1606232093298" />
-    <state width="1877" height="678" key="GridCell.Tab.0.bottom" timestamp="1606231415433">
+    <state width="1877" height="819" key="GridCell.Tab.0.bottom" timestamp="1606911760606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="678" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606231415433" />
-    <state width="1877" height="678" key="GridCell.Tab.0.center" timestamp="1606231415433">
+    <state width="1877" height="819" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606911760606" />
+    <state width="1877" height="819" key="GridCell.Tab.0.center" timestamp="1606911760606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="678" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606231415433" />
-    <state width="1877" height="678" key="GridCell.Tab.0.left" timestamp="1606231415433">
+    <state width="1877" height="819" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606911760606" />
+    <state width="1877" height="819" key="GridCell.Tab.0.left" timestamp="1606911760606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="678" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606231415433" />
-    <state width="1877" height="678" key="GridCell.Tab.0.right" timestamp="1606231415433">
+    <state width="1877" height="819" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606911760606" />
+    <state width="1877" height="819" key="GridCell.Tab.0.right" timestamp="1606911760606">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="678" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606231415433" />
-    <state width="1877" height="261" key="GridCell.Tab.1.bottom" timestamp="1606149716769">
+    <state width="1877" height="819" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606911760606" />
+    <state width="1877" height="598" key="GridCell.Tab.1.bottom" timestamp="1606910623906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606149716769" />
-    <state width="1877" height="261" key="GridCell.Tab.1.center" timestamp="1606149716769">
+    <state width="1877" height="598" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606910623906" />
+    <state width="1877" height="598" key="GridCell.Tab.1.center" timestamp="1606910623906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606149716769" />
-    <state width="1877" height="261" key="GridCell.Tab.1.left" timestamp="1606149716768">
+    <state width="1877" height="598" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606910623906" />
+    <state width="1877" height="598" key="GridCell.Tab.1.left" timestamp="1606910623906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606149716768" />
-    <state width="1877" height="261" key="GridCell.Tab.1.right" timestamp="1606149716769">
+    <state width="1877" height="598" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606910623906" />
+    <state width="1877" height="598" key="GridCell.Tab.1.right" timestamp="1606910623906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="261" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606149716769" />
+    <state width="1877" height="598" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606910623906" />
     <state width="1877" height="261" key="GridCell.Tab.2.bottom" timestamp="1606149716769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -369,10 +382,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605622679810" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606149707417">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1606233096933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606149707417" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606233096933" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -385,5 +398,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605622743603" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/IgromaniaGamesParser.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

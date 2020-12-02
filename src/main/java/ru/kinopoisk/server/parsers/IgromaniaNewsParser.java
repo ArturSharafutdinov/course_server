@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.safety.Whitelist;
 import ru.kinopoisk.server.persistence.dto.ArticleDto;
+import ru.kinopoisk.server.persistence.interfaces.Parser;
 import ru.kinopoisk.server.utils.Constraints;
 
 import java.io.IOException;
@@ -15,11 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 //Class for parsing igromania news page
-public class IgromaniaNewsParser {
-
-
-    //Format for parsing string date like 16.11.2020
-    private static DateFormat format = new SimpleDateFormat("dd.MM.yyyy", Locale.ENGLISH);
+public class IgromaniaNewsParser implements Parser {
 
     // Name of css class where locate all news
     private static String allNewsClass = "lcol"; //div
@@ -61,7 +58,7 @@ public class IgromaniaNewsParser {
             String type = tempSect.substring(0, tempSect.length() - 1);
             String views = section.select(String.format(Constraints.templateForSpan, "sicn_views")).text();
 
-            Date simpleDate = format.parse(date);
+            Date simpleDate = Constraints.format.parse(date);
 
 
 

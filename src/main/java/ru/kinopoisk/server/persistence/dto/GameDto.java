@@ -9,8 +9,6 @@ public class GameDto extends LongIdEntityDto{
 
     private Date releaseDate;
 
-    private String alterName;
-
     private String gamesSeries;
 
     private String description;
@@ -19,34 +17,13 @@ public class GameDto extends LongIdEntityDto{
 
     private String Link;
 
-    private List<Integer> rating; // Igromania, metacritic, users
+    private Integer metacriticRating; // Рейтинг метакритика
 
-    private List<String> developers;
+    private List<String> developers;  // Разработчики
 
-    private List<String> publishers;
+    private List<String> platforms; // Платформы
 
-    private List<String> platforms;
-
-    private List<String> genres;
-
-    private List<String> stores;
-
-    public GameDto(String originalName, Date releaseDate, String alterName, String gamesSeries, String description, String imageLink, String link, List<Integer> rating, List<String> developers, List<String> publishers, List<String> platforms, List<String> genres, List<String> stores) {
-        this.originalName = originalName;
-        this.releaseDate = releaseDate;
-        this.alterName = alterName;
-        this.gamesSeries = gamesSeries;
-        this.description = description;
-        this.imageLink = imageLink;
-        Link = link;
-        this.rating = rating;
-        this.developers = developers;
-        this.publishers = publishers;
-        this.platforms = platforms;
-        this.genres = genres;
-        this.stores = stores;
-    }
-
+    private List<String> genres; // Жанры
 
     public String getOriginalName() {
         return originalName;
@@ -62,14 +39,6 @@ public class GameDto extends LongIdEntityDto{
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public String getAlterName() {
-        return alterName;
-    }
-
-    public void setAlterName(String alterName) {
-        this.alterName = alterName;
     }
 
     public String getGamesSeries() {
@@ -104,28 +73,12 @@ public class GameDto extends LongIdEntityDto{
         Link = link;
     }
 
-    public List<Integer> getRating() {
-        return rating;
-    }
-
-    public void setRating(List<Integer> rating) {
-        this.rating = rating;
-    }
-
     public List<String> getDevelopers() {
         return developers;
     }
 
     public void setDevelopers(List<String> developers) {
         this.developers = developers;
-    }
-
-    public List<String> getPublishers() {
-        return publishers;
-    }
-
-    public void setPublishers(List<String> publishers) {
-        this.publishers = publishers;
     }
 
     public List<String> getPlatforms() {
@@ -144,31 +97,18 @@ public class GameDto extends LongIdEntityDto{
         this.genres = genres;
     }
 
-    public List<String> getStores() {
-        return stores;
-    }
-
-    public void setStores(List<String> stores) {
-        this.stores = stores;
-    }
-
-
     @Override
     public String toString() {
         return "GameDto{" +
                 "originalName='" + originalName + '\'' +
                 ", releaseDate=" + releaseDate +
-                ", alterName='" + alterName + '\'' +
                 ", gamesSeries='" + gamesSeries + '\'' +
                 ", description='" + description + '\'' +
                 ", imageLink='" + imageLink + '\'' +
                 ", Link='" + Link + '\'' +
-                ", rating=" + rating +
                 ", developers=" + developers +
-                ", publishers=" + publishers +
                 ", platforms=" + platforms +
                 ", genres=" + genres +
-                ", stores=" + stores +
-                "} ";
+                "} " + super.toString();
     }
 }
