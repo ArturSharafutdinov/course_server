@@ -97,6 +97,14 @@ public class GameDto extends LongIdEntityDto{
         this.genres = genres;
     }
 
+    public Integer getMetacriticRating() {
+        return metacriticRating;
+    }
+
+    public void setMetacriticRating(Integer metacriticRating) {
+        this.metacriticRating = metacriticRating;
+    }
+
     @Override
     public String toString() {
         return "GameDto{" +
@@ -109,6 +117,23 @@ public class GameDto extends LongIdEntityDto{
                 ", developers=" + developers +
                 ", platforms=" + platforms +
                 ", genres=" + genres +
-                "} " + super.toString();
+                "} ";
+    }
+
+    public GameDto(String originalName, Date releaseDate, String gamesSeries, String description, String imageLink, String link, Integer metacriticRating, List<String> developers, List<String> platforms, List<String> genres) {
+        this.originalName = originalName;
+        this.releaseDate = releaseDate;
+        this.gamesSeries = gamesSeries;
+        this.description = description;
+        this.imageLink = imageLink;
+        Link = link;
+        this.metacriticRating = metacriticRating;
+        this.developers = developers;
+        this.platforms = platforms;
+        this.genres = genres;
+    }
+
+    public GameDto(){
+
     }
 }
