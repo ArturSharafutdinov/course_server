@@ -7,7 +7,7 @@ public class GameDto extends LongIdEntityDto{
 
     private String originalName;
 
-    private Date releaseDate;
+    private String releaseDate;
 
     private String gamesSeries;
 
@@ -33,11 +33,11 @@ public class GameDto extends LongIdEntityDto{
         this.originalName = originalName;
     }
 
-    public Date getReleaseDate() {
+    public String getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
@@ -109,18 +109,19 @@ public class GameDto extends LongIdEntityDto{
     public String toString() {
         return "GameDto{" +
                 "originalName='" + originalName + '\'' +
-                ", releaseDate=" + releaseDate +
+                ", releaseDate='" + releaseDate + '\'' +
                 ", gamesSeries='" + gamesSeries + '\'' +
                 ", description='" + description + '\'' +
                 ", imageLink='" + imageLink + '\'' +
                 ", Link='" + Link + '\'' +
+                ", metacriticRating=" + metacriticRating +
                 ", developers=" + developers +
                 ", platforms=" + platforms +
                 ", genres=" + genres +
-                "} ";
+                "} " + super.toString();
     }
 
-    public GameDto(String originalName, Date releaseDate, String gamesSeries, String description, String imageLink, String link, Integer metacriticRating, List<String> developers, List<String> platforms, List<String> genres) {
+    public GameDto(String originalName, String releaseDate, String gamesSeries, String description, String imageLink, String link, Integer metacriticRating, List<String> developers, List<String> platforms, List<String> genres) {
         this.originalName = originalName;
         this.releaseDate = releaseDate;
         this.gamesSeries = gamesSeries;

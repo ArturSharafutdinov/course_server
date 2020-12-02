@@ -50,8 +50,10 @@ public class IgromaniaGamesParser implements Parser {
             String imageLink = game.selectFirst(String.format(Constraints.templateForImage,"image")).attr("src");
             int gameId = Integer.parseInt(game.attr("data-id"));
             GameDto newGame = getGameInfo(gameId);
-            newGame.setImageLink(imageLink);
-            allGamesDto.add(newGame);
+            if(newGame!=null) {
+                newGame.setImageLink(imageLink);
+                allGamesDto.add(newGame);
+            }
         }
 return allGamesDto;
     }
@@ -76,6 +78,14 @@ return allGamesDto;
         // Get game content block with releaseDate, gamesSeries, developers, platforms, description, originalName
         Element gameContent = doc.selectFirst(String.format(Constraints.templateForDiv,"game-content"));
 
+        // Parse metacritic rating
+        Element metacritic = gameContent.selectFirst(String.format(Constraints.templateForDiv,"metacritic"));
+        int metacriticRating = Integer.parseInt(metacritic.selectFirst(String.format(Constraints.templateForSpan,"value")).text());
+
+        if(metacriticRating<=0){
+            return null;
+        }
+
         List<String> genres = new ArrayList<>();
         Element gameTags = gameContent.selectFirst(String.format(Constraints.templateForDiv,"game-tags"));
         for(Element value :  gameTags.select("a")){
@@ -84,10 +94,6 @@ return allGamesDto;
                 genres.add(tag);
             }
         }
-
-        // Parse metacritic rating
-        Element metacritic = gameContent.selectFirst(String.format(Constraints.templateForDiv,"metacritic"));
-        int metacriticRating = Integer.parseInt(metacritic.selectFirst(String.format(Constraints.templateForSpan,"value")).text());
 
         // Get full description without tags
         Element description = gameContent.selectFirst(String.format(Constraints.templateForDiv,"description"));
@@ -132,9 +138,8 @@ return allGamesDto;
         }
 
 
-
         return new GameDto(originalName,
-                DateParser.parseRussianDate(releaseDate),
+              releaseDate,
                 gamesSeries,
                 fullDescription,
                 "",
@@ -147,25 +152,29 @@ return allGamesDto;
     }
 
 
-    public List<GameDto> getAllGamesDto() {
-        return allGamesDto;
-    }
-
     public static void main(String[] args) throws IOException, ParseException {
         IgromaniaGamesParser gamesParser;
         long normalGamesCounter = 0;
-        int i=1;
+        int i=25250;
+        long startTime = System.currentTimeMillis();
       try{
-          for(i;i<=25548;i++){
+          for(;i<=25548;i++){
               gamesParser = new IgromaniaGamesParser(i);
-              normalGamesCounter+= gamesParser.getGamesInfoFromPageWithNumber()
-                      .stream()
-                      .filter(Predicate.not(g->g.getGamesSeries().equals("")))
-                      .filter(g->g.getMetacriticRating()>0).count();
+              List<GameDto> tempList = gamesParser.getGamesInfoFromPageWithNumber();
+                      tempList
+                              .stream()
+              .forEach(System.out::println);
+                      normalGamesCounter+=tempList.size();
+
           }
       }catch (Exception ex){
           System.out.println(i);
+          System.out.println(normalGamesCounter);
+          ex.printStackTrace();
       }
+        long timeSpent = System.currentTimeMillis() - startTime;
+
+        System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
 
 
     }
