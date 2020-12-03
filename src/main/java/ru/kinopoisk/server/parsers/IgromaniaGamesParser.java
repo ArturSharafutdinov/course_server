@@ -5,9 +5,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.safety.Whitelist;
+import ru.kinopoisk.server.persistence.domain.Game;
 import ru.kinopoisk.server.persistence.dto.ArticleDto;
 import ru.kinopoisk.server.persistence.dto.GameDto;
 import ru.kinopoisk.server.persistence.interfaces.Parser;
+import ru.kinopoisk.server.services.mappers.GameMapper;
 import ru.kinopoisk.server.utils.Constraints;
 import ru.kinopoisk.server.utils.DateParser;
 
@@ -17,6 +19,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 
 public class IgromaniaGamesParser implements Parser {
@@ -47,11 +50,20 @@ public class IgromaniaGamesParser implements Parser {
         Element gamesBlock = doc.selectFirst(String.format(Constraints.templateForDiv,"games-block"));
 
         for(Element game : gamesBlock.select(String.format(Constraints.templateForDiv,"game-card"))){
+            // Parse metacritic rating
+            Element metacritic = game.selectFirst(String.format(Constraints.templateForDiv,"metacritic"));
+            int metacriticRating = Integer.parseInt(metacritic.selectFirst(String.format(Constraints.templateForSpan,"value")).text());
+
+            if(metacriticRating<=0){
+                continue;
+            }
+
             String imageLink = game.selectFirst(String.format(Constraints.templateForImage,"image")).attr("src");
             int gameId = Integer.parseInt(game.attr("data-id"));
             GameDto newGame = getGameInfo(gameId);
             if(newGame!=null) {
                 newGame.setImageLink(imageLink);
+                newGame.setMetacriticRating(metacriticRating);
                 allGamesDto.add(newGame);
             }
         }
@@ -77,14 +89,6 @@ return allGamesDto;
 
         // Get game content block with releaseDate, gamesSeries, developers, platforms, description, originalName
         Element gameContent = doc.selectFirst(String.format(Constraints.templateForDiv,"game-content"));
-
-        // Parse metacritic rating
-        Element metacritic = gameContent.selectFirst(String.format(Constraints.templateForDiv,"metacritic"));
-        int metacriticRating = Integer.parseInt(metacritic.selectFirst(String.format(Constraints.templateForSpan,"value")).text());
-
-        if(metacriticRating<=0){
-            return null;
-        }
 
         List<String> genres = new ArrayList<>();
         Element gameTags = gameContent.selectFirst(String.format(Constraints.templateForDiv,"game-tags"));
@@ -144,7 +148,7 @@ return allGamesDto;
                 fullDescription,
                 "",
                 link,
-                metacriticRating,
+                0,
                 developers,
                 platforms,
                 genres);
@@ -154,22 +158,24 @@ return allGamesDto;
 
     public static void main(String[] args) throws IOException, ParseException {
         IgromaniaGamesParser gamesParser;
-        long normalGamesCounter = 0;
-        int i=25250;
+        int i=25000;
         long startTime = System.currentTimeMillis();
       try{
-          for(;i<=25548;i++){
+          for(;i<25548;i++){
               gamesParser = new IgromaniaGamesParser(i);
               List<GameDto> tempList = gamesParser.getGamesInfoFromPageWithNumber();
-                      tempList
-                              .stream()
-              .forEach(System.out::println);
-                      normalGamesCounter+=tempList.size();
-
+              if(tempList.size()!=0){
+                  List<Game> gamesList = new ArrayList<>();
+                  GameMapper gameMapper = new GameMapper();
+                  for(GameDto gameDto : tempList){
+                      gamesList.add(gameMapper.mapToEntity(gameDto));
+                  }
+              }
+              if(tempList.size()>0){
+                  System.out.println(tempList.size());
+              }
           }
       }catch (Exception ex){
-          System.out.println(i);
-          System.out.println(normalGamesCounter);
           ex.printStackTrace();
       }
         long timeSpent = System.currentTimeMillis() - startTime;
