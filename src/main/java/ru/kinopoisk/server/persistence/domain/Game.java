@@ -2,7 +2,7 @@ package ru.kinopoisk.server.persistence.domain;
 
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name="GAMES")
@@ -17,7 +17,7 @@ public class Game extends LongIdEntity{
     @Column(name="SERIES",length = 100)
     private String gamesSeries;
 
-    @Column(name="DESCRIPTION",length = 5000)
+    @Column(name="DESCRIPTION",length = 20000)
     private String description;
 
     @Column(name="IMAGE_LINK",length = 1000)
@@ -29,14 +29,36 @@ public class Game extends LongIdEntity{
     @Column(name="RATING",nullable = false)
     private Integer metacriticRating; // Рейтинг метакритика
 
-    @ManyToMany
-    private List<Developer> developers;  // Разработчики
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = {
+                   CascadeType.MERGE
+            })
+    @JoinTable(name = "games_developers",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "developers_id")
+    )
+    private Set<Developer> developers= new HashSet<>();  // Разработчики
 
-    @ManyToMany
-    private List<Platform> platforms; // Платформы
 
-    @ManyToMany
-    private List<Genre> genres; // Жанры
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = {
+                 CascadeType.MERGE
+            })
+    @JoinTable(name = "games_platforms",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "platforms_id")
+    )
+    private Set<Platform> platforms= new HashSet<>(); // Платформы
+
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = {
+                   CascadeType.MERGE
+            })
+    @JoinTable(name = "games_genres",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "genres_id")
+    )
+    private Set<Genre> genres= new HashSet<>(); // Жанры
 
 
     public String getOriginalName() {
@@ -95,27 +117,27 @@ public class Game extends LongIdEntity{
         this.metacriticRating = metacriticRating;
     }
 
-    public List<Developer> getDevelopers() {
+    public Set<Developer> getDevelopers() {
         return developers;
     }
 
-    public void setDevelopers(List<Developer> developers) {
+    public void setDevelopers(Set<Developer> developers) {
         this.developers = developers;
     }
 
-    public List<Platform> getPlatforms() {
+    public Set<Platform> getPlatforms() {
         return platforms;
     }
 
-    public void setPlatforms(List<Platform> platforms) {
+    public void setPlatforms(Set<Platform> platforms) {
         this.platforms = platforms;
     }
 
-    public List<Genre> getGenres() {
+    public Set<Genre> getGenres() {
         return genres;
     }
 
-    public void setGenres(List<Genre> genres) {
+    public void setGenres(Set<Genre> genres) {
         this.genres = genres;
     }
 
@@ -134,4 +156,21 @@ public class Game extends LongIdEntity{
                 ", genres=" + genres +
                 "} ";
     }
+
+    public void addPlatform(Platform platform){
+        platforms.add(platform);
+        platform.getGames().add(this);
+    }
+
+    public void addDeveloper(Developer developer){
+        developers.add(developer);
+        developer.getGames().add(this);
+    }
+
+    public void addGenre(Genre genre){
+        genres.add(genre);
+        genre.getGames().add(this);
+    }
+
+
 }

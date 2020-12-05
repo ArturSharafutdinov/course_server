@@ -14,7 +14,7 @@ public interface INewsService {
 
     boolean contains(String name, List<Article> articlesFromDb);
 
-     void saveArticleToDb();
+     void saveArticlesToDb();
 
      List<Article> getAllArticles();
 

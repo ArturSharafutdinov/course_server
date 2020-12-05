@@ -1,7 +1,8 @@
 package ru.kinopoisk.server.persistence.domain;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="PLATFORMS")
@@ -10,8 +11,14 @@ public class Platform extends LongIdEntity{
     @Column(name = "NAME",nullable = false)
     private String name;
 
-    @ManyToMany
-    private List<Game> games;
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade = {
+                    CascadeType.MERGE
+            })
+    @JoinTable(name="games_platforms",
+            joinColumns=@JoinColumn(name="platforms_id"),
+            inverseJoinColumns=@JoinColumn(name="game_id"))
+    private Set<Game> games = new HashSet<>();
 
     public Platform() {
 
@@ -26,15 +33,15 @@ public class Platform extends LongIdEntity{
         this.name = name;
     }
 
-    public List<Game> getGames() {
+    public Set<Game> getGames() {
         return games;
     }
 
-    public void setGames(List<Game> games) {
+    public void setGames(Set<Game> games) {
         this.games = games;
     }
 
-    public Platform(String name, List<Game> games) {
+    public Platform(String name, Set<Game> games) {
         this.name = name;
         this.games = games;
     }

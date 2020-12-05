@@ -26,20 +26,17 @@ public class GameMapper {
         game.setMetacriticRating(gameDto.getMetacriticRating());
         game.setReleaseDate(gameDto.getReleaseDate());
 
-        List<Platform> platforms = new ArrayList<>();
-        for(String platform : gameDto.getPlatforms()){
-            platforms.add(new Platform(platform));
-        }
-
-        List<Genre> genres = new ArrayList<>();
-        for(String genre : gameDto.getGenres()){
-            genres.add(new Genre(genre));
-        }
-
-        List<Developer> developers = new ArrayList<>();
-        for(String developer : gameDto.getDevelopers()){
-            developers.add(new Developer(developer));
-        }
+//        for(String platform : gameDto.getPlatforms()){
+//            game.addPlatform(new Platform(platform));
+//        }
+//
+//        for(String genre : gameDto.getGenres()){
+//            game.addGenre(new Genre(genre));
+//        }
+//
+//        for(String developer : gameDto.getDevelopers()){
+//           game.addDeveloper(new Developer(developer));
+//        }
 
         return game;
 

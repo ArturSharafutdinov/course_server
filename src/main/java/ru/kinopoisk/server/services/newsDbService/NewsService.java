@@ -35,7 +35,7 @@ public class NewsService implements INewsService{
         articles = articlesFromParser;
     }
 
-    public void parser() throws IOException, ParseException {
+    public void parse() throws IOException, ParseException {
         IgromaniaNewsParser parser = new IgromaniaNewsParser();
         parser.getInfoFromNews();
         articles=parser.getAllArticles();
@@ -113,7 +113,7 @@ public class NewsService implements INewsService{
         return false;
     }
 
-    public void saveArticleToDb() {
+    public void saveArticlesToDb() {
         ArticleMapper mapper = new ArticleMapper();
         List<Article> articlesFromDb = articleService.getAll();
         if (!articlesFromDb.isEmpty()) {

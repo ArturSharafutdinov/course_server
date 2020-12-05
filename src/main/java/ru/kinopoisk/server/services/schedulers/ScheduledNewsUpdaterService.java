@@ -16,7 +16,7 @@ public class ScheduledNewsUpdaterService  {
     NewsService newsService;
 
 
-    @Scheduled(fixedRate = 15000)
+  //  @Scheduled(fixedRate = 15000)
     public void updateViews(){
         newsService.updateAllArticlesViews();
     }

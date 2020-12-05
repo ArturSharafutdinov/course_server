@@ -16,14 +16,14 @@ public class ScheduledNewsService {
     NewsService newsService;
 
 
-    @Scheduled(fixedRate = 600000)
+ //   @Scheduled(fixedRate = 600000)
     public void retakeNews(){
         boolean isDropped=false;
         while(!isDropped)
         try {
-            newsService.parser();
+            newsService.parse();
             isDropped=true;
-            newsService.saveArticleToDb();
+            newsService.saveArticlesToDb();
         } catch (IOException e) {
         } catch (ParseException e) {
         }
