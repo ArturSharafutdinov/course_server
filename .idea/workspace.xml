@@ -13,33 +13,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Added GamesParserService with multithreading, add entities and repos for games,">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/DeveloperService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/GameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/GenreService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/PlatformService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/gamesDbService/GamesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/gamesDbService/IGamesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledGamesService.java" afterDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add games db service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/GamesParserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/GamesParserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/tasks/GamesParserTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/tasks/GamesParserTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/DeveloperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/DeveloperRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/GenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/GenreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/PlatformRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/dao/PlatformRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Developer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Developer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/persistence/domain/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/mappers/GameMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/mappers/GameMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/newsDbService/INewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/newsDbService/INewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/newsDbService/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/newsDbService/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledNewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledNewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledNewsUpdaterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledNewsUpdaterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/utils/Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/utils/Constraints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/gamesDbService/GamesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/gamesDbService/GamesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledGamesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/schedulers/ScheduledGamesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/parsers/IgromaniaNewsParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/newsDbService/INewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/newsDbService/INewsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/newsDbService/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/kinopoisk/server/services/newsDbService/NewsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.txt" afterDir="false" />
     </list>
@@ -213,7 +192,8 @@
       <workItem from="1606916723041" duration="8445000" />
       <workItem from="1607002845215" duration="11903000" />
       <workItem from="1607085129880" duration="3257000" />
-      <workItem from="1607153570448" duration="9164000" />
+      <workItem from="1607153570448" duration="9260000" />
+      <workItem from="1607330517164" duration="6336000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -299,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607014813873</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add games db service">
+      <created>1607162877802</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607162877802</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +320,8 @@
     <MESSAGE value="Complete games parser" />
     <MESSAGE value="Change GameDto(Date releaseDate to String), remade game parser to speed up the parser" />
     <MESSAGE value="Added GamesParserService with multithreading, add entities and repos for games," />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GamesParserService with multithreading, add entities and repos for games," />
+    <MESSAGE value="Add games db service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add games db service" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -368,54 +356,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="261" key="#toString()_Generation_Settings/0.0.1920.1040@0.0.1920.1040" timestamp="1606232093298" />
-    <state width="1860" height="685" key="GridCell.Tab.0.bottom" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.0.bottom" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.0.center" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.0.center" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.0.left" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.0.left" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.0.right" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.0.right" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.1.bottom" timestamp="1607162295594">
+    <state width="1860" height="668" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.1.bottom" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295594" />
-    <state width="1860" height="685" key="GridCell.Tab.1.center" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.1.center" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.1.left" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.1.left" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1860" height="685" key="GridCell.Tab.1.right" timestamp="1607162295593">
+    <state width="1860" height="668" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.1.right" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="685" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607162295593" />
-    <state width="1877" height="180" key="GridCell.Tab.2.bottom" timestamp="1607088412757">
+    <state width="1860" height="668" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.2.bottom" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607088412757" />
-    <state width="1877" height="180" key="GridCell.Tab.2.center" timestamp="1607088412757">
+    <state width="1860" height="668" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.2.center" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607088412757" />
-    <state width="1877" height="180" key="GridCell.Tab.2.left" timestamp="1607088412757">
+    <state width="1860" height="668" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.2.left" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607088412757" />
-    <state width="1877" height="180" key="GridCell.Tab.2.right" timestamp="1607088412757">
+    <state width="1860" height="668" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
+    <state width="1860" height="668" key="GridCell.Tab.2.right" timestamp="1607338275258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="180" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607088412757" />
+    <state width="1860" height="668" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607338275258" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1605785256843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -428,10 +416,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605622679810" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607014821905">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607162884188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607014821905" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607162884188" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -444,5 +432,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="760" y="421" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605622743603" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/parsers/GamesParserService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

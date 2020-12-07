@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 @Service
-public class GamesService implements IGamesService{
+public class GamesService implements IGamesService {
 
     @Autowired
     GameService gameService;
@@ -42,22 +42,20 @@ public class GamesService implements IGamesService{
 
     @Override
     public void savePlatformToDb() {
-        for(String platform : Constraints.platforms){
+        for (String platform : Constraints.platforms) {
             platformService.save(new Platform(platform));
         }
     }
 
     @Override
     public void saveDeveloperToDb(List<String> developers) {
-        if(developerService.getAll().isEmpty()){
-            for(String developer : developers){
+        if (developerService.getAll().isEmpty()) {
+            for (String developer : developers) {
                 developerService.save(new Developer(developer));
             }
-        }
-        else
-        {
-            for(String developer : developers){
-                if(developerService.findByName(developer)==null){
+        } else {
+            for (String developer : developers) {
+                if (developerService.findByName(developer) == null) {
                     developerService.save(new Developer(developer));
                 }
             }
@@ -67,68 +65,44 @@ public class GamesService implements IGamesService{
 
     @Override
     public void saveGenreToDb() {
-for(String genre : Constraints.genres){
-    genreService.save(new Genre(genre));
-}
+        for (String genre : Constraints.genres) {
+            genreService.save(new Genre(genre));
+        }
     }
 
     @Override
     public void saveGamesToDb(int firstPageNumber, int lastPageNumber) throws ExecutionException, InterruptedException {
-        List<GameDto> games = gamesParserService.getAllGamesFromPages(firstPageNumber,lastPageNumber);
-        List<Game> gamesFromDb = gameService.getAll();
+        List<GameDto> games = gamesParserService.getAllGamesFromPages(firstPageNumber, lastPageNumber);
 
-        if(!gamesFromDb.isEmpty()){
-            for(GameDto gameDto : games){
-                if(gameService.findByName(gameDto.getOriginalName())==null){
-                  //  saveDeveloperToDb(gameDto.getDevelopers());
-                    Game game = gameMapper.mapToEntity(gameDto);
-
-                }
-            }
-        }
-        else
-        {
+        if(platformService.getAll().isEmpty() && genreService.getAll().isEmpty()){
             saveGenreToDb();
             savePlatformToDb();
-            for(GameDto gameDto : games){
-                saveDeveloperToDb(gameDto.getDevelopers());
-                Game game = gameMapper.mapToEntity(gameDto);
-                for(String platform : gameDto.getPlatforms()){
-                    Platform platformFromDb = platformService.findByName(platform);
-                    if(platformFromDb!=null){
+        }
+
+            List<Platform> platformsFromDb = platformService.getAll();
+            List<Genre> genresFromDb = genreService.getAll();
+            for (GameDto gameDto : games) {
+                if (gameService.findByName(gameDto.getOriginalName()) == null) {
+                    Game game = gameMapper.mapToEntity(gameDto);
+                    saveDeveloperToDb(gameDto.getDevelopers());
+                    List<Developer> developersFromDb = developerService.getAll();
+                    for (String platform : gameDto.getPlatforms()) {
+                        Platform platformFromDb = platformsFromDb.stream().filter(x -> x.getName().equals(platform)).findFirst().orElse(null);
                         game.addPlatform(platformFromDb);
                     }
-                    else
-                    {
-                        game.addPlatform(new Platform(platform));
-                    }
-                }
-                for(String developer : gameDto.getDevelopers()){
-                    Developer developerFromDb = developerService.findByName(developer);
-                    if(developerFromDb!=null){
+                    for (String developer : gameDto.getDevelopers()) {
+                        Developer developerFromDb = developersFromDb.stream().filter(x -> x.getName().equals(developer)).findFirst().orElse(null);
                         game.addDeveloper(developerFromDb);
                     }
-                    else{
-                        game.addDeveloper(new Developer(developer));
-                    }
-                }
 
-                for(String genre : gameDto.getGenres()){
-                    Genre genreFromDb = genreService.findByName(genre);
-                    if(genreFromDb!=null){
+                    for (String genre : gameDto.getGenres()) {
+                        Genre genreFromDb = genresFromDb.stream().filter(x -> x.getName().equals(genre)).findFirst().orElse(null);
                         game.addGenre(genreFromDb);
                     }
-                    else
-                    {
-                        game.addGenre(new Genre(genre));
-                    }
+                    gameService.save(game);
                 }
-
-gameService.save(game);
             }
-
-
-        }
+        System.out.println("Все добавлено");
 
     }
 }

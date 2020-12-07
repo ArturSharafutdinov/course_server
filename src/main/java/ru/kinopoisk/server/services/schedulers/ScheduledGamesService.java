@@ -14,9 +14,8 @@ public class ScheduledGamesService {
     GamesService gamesService;
 
 
-    @Scheduled(fixedRate = 1500000)
+    @Scheduled(fixedRate = 432000000)
     public void retakeGames() throws ExecutionException, InterruptedException {
-        gamesService.saveGamesToDb(20000,25000);
-
+        gamesService.saveGamesToDb(1,25548);
     }
 }

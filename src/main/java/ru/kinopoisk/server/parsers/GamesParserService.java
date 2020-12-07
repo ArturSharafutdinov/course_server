@@ -18,7 +18,7 @@ public class GamesParserService {
     public List<GameDto> getAllGamesFromPages(int beginIndex, int lastIndex) throws ExecutionException, InterruptedException {
 
         ExecutorService executorService = Executors.newFixedThreadPool(12);
-        List<Future<List<GameDto>>> futures = new ArrayList<Future<List<GameDto>>>(1000);
+        List<Future<List<GameDto>>> futures = new ArrayList<>(1000);
 
         List<GameDto> games = new ArrayList<>();
 
@@ -28,12 +28,16 @@ public class GamesParserService {
             futures.add(executorService.submit(gamesParserThread));
         }
 
+        long startTime = System.currentTimeMillis();
+
         for (Future<List<GameDto>> f : futures) {
             List<GameDto> gamesFromFutureList = f.get();
             if(games!=null){
                 games.addAll(gamesFromFutureList);
             }
         }
+        long timeSpent = System.currentTimeMillis() - startTime;
+        System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
         executorService.shutdown();
 
 return games;
