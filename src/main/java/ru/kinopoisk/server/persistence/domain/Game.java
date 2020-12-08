@@ -29,7 +29,7 @@ public class Game extends LongIdEntity{
     @Column(name="RATING",nullable = false)
     private Integer metacriticRating; // Рейтинг метакритика
 
-    @ManyToMany(fetch = FetchType.EAGER,
+    @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                    CascadeType.MERGE
             })
@@ -40,7 +40,7 @@ public class Game extends LongIdEntity{
     private Set<Developer> developers= new HashSet<>();  // Разработчики
 
 
-    @ManyToMany(fetch = FetchType.EAGER,
+    @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                  CascadeType.MERGE
             })
@@ -50,7 +50,7 @@ public class Game extends LongIdEntity{
     )
     private Set<Platform> platforms= new HashSet<>(); // Платформы
 
-    @ManyToMany(fetch = FetchType.EAGER,
+    @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                    CascadeType.MERGE
             })

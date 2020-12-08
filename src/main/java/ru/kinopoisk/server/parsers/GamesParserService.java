@@ -23,12 +23,11 @@ public class GamesParserService {
         List<GameDto> games = new ArrayList<>();
 
         // Create tasks for every specified pages
-        for(int i=beginIndex;i<lastIndex;i++){
+        for(int i=beginIndex;i<=lastIndex;i++){
             GamesParserTask gamesParserThread = new GamesParserTask(i);
             futures.add(executorService.submit(gamesParserThread));
         }
 
-        long startTime = System.currentTimeMillis();
 
         for (Future<List<GameDto>> f : futures) {
             List<GameDto> gamesFromFutureList = f.get();
@@ -36,8 +35,7 @@ public class GamesParserService {
                 games.addAll(gamesFromFutureList);
             }
         }
-        long timeSpent = System.currentTimeMillis() - startTime;
-        System.out.println("программа выполнялась " + timeSpent + " миллисекунд");
+
         executorService.shutdown();
 
 return games;

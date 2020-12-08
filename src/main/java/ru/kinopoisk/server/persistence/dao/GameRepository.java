@@ -9,4 +9,6 @@ import ru.kinopoisk.server.persistence.domain.Game;
 public interface GameRepository extends JpaRepository<Game,Long> {
 
     Game findByOriginalName(String name);
+
+
 }
