@@ -7,6 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,9 +28,13 @@ public class AuthController {
     TokenProvider tokenProvider;
     @Autowired
     private AuthenticationManagerBuilder authenticationManagerBuilder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @PostMapping("/auth")
     public ResponseEntity<Object> login(@Validated @RequestBody AuthUserDto user) {
+
+
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword());
 

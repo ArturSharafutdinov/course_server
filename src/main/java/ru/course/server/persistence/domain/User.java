@@ -34,6 +34,9 @@ public class User extends LongIdEntity {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "creator")
+    private Set<Task> tasks;
+
 
     public String getUsername() {
         return username;
@@ -89,5 +92,13 @@ public class User extends LongIdEntity {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
     }
 }

@@ -1,4 +1,4 @@
-package ru.course.server.persistence.domain;
+package ru.course.server.compiler;
 
 import java.io.*;
 import java.util.regex.Matcher;
@@ -7,10 +7,11 @@ import java.util.regex.Pattern;
 public class Compiler {
 
     public static Pattern patternForMainClassName = Pattern.compile("public class (\\D{1}\\w+Class)");
-    public static String fileDirectory = "C:\\Users\\Артур\\Desktop\\testigromania\\igromania\\src\\main\\java\\ru\\kinopoisk\\server\\tempFiles";
+    public static String fileDirectory = "C:\\Users\\Артур\\Desktop\\Java\\Projects\\Course\\course_server\\src\\main\\java\\ru\\course\\server\\tempFiles";
 
-    public String compile(String stringFromClient) throws IOException {
-        Matcher matcher = patternForMainClassName.matcher(stringFromClient);
+    public String compile(String code, String testData) throws IOException {
+        System.out.println(testData);
+        Matcher matcher = patternForMainClassName.matcher(code);
         String filename ="";
         if(matcher.find())
             filename=matcher.group(1);
@@ -22,11 +23,11 @@ public class Compiler {
 
         //Выведем строку, полученную от клиента в только что созданный файл
         FileOutputStream fos = new FileOutputStream(fn);
-        byte[] sourcecode = stringFromClient.getBytes();
+        byte[] sourcecode = code.getBytes();
         fos.write(sourcecode);
         fos.close();
 
-        String res =run(fn.getAbsolutePath());
+        String res =run(fn.getAbsolutePath(),testData);
 
         fn.delete();
 
@@ -36,8 +37,8 @@ public class Compiler {
     }
 
 
-    public String run(String absolutePathOfClassFile) throws IOException {
-        String runcmd = "java " + absolutePathOfClassFile;
+    public String run(String absolutePathOfClassFile, String testData) throws IOException {
+        String runcmd = "java " + absolutePathOfClassFile+" "+testData;
         Process exe = Runtime.getRuntime().exec(runcmd);
         String res="";
         try{

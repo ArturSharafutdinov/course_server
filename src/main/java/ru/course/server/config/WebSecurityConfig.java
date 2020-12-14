@@ -69,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests()
-                .antMatchers("/register").permitAll()
+                .antMatchers("/registration").permitAll()
                 .antMatchers("/auth").permitAll()
                 .antMatchers("/news").permitAll()
                 .antMatchers("/news/LastNews").permitAll()
@@ -79,6 +79,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/games/findTen").permitAll().
                 antMatchers("/games/findByName").permitAll()
                 .antMatchers("/compile").permitAll()
+                .antMatchers("/createTask").permitAll()
 
 
                 .anyRequest().authenticated()
