@@ -10,7 +10,6 @@ public class Compiler {
     public static String fileDirectory = "C:\\Users\\Артур\\Desktop\\Java\\Projects\\Course\\course_server\\src\\main\\java\\ru\\course\\server\\tempFiles";
 
     public String compile(String code, String testData) throws IOException {
-        System.out.println(testData);
         Matcher matcher = patternForMainClassName.matcher(code);
         String filename ="";
         if(matcher.find())
@@ -50,7 +49,7 @@ public class Compiler {
                     break;
                 }
                 else{
-                    res+=temp;
+                    res+=temp+"\n";
                 }
             }
             if(res.equals("")){
@@ -64,14 +63,12 @@ public class Compiler {
                     }
                 }
             }
-            System.out.println(res);
             bin.close();
             berr.close();
         }
         catch(Exception e){
             System.out.println(e);
         }
-
         return res;
 
     }

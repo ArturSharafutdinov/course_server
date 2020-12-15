@@ -1,8 +1,8 @@
-package ru.course.server.persistence.domain;
+package ru.course.server.persistence.dto;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+
 public class VariablesDto {
 
     private String type;

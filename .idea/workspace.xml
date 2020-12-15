@@ -13,33 +13,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vladmihalcea_hibernate_types_52_2_9_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/config/DataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/SignUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dao/TaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/InputDataDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/OutputDataDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/VariablesDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/RegistrUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/TaskDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/mappers/TaskMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/utils/Template1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" beforeDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add compiler, compilerService for tasks.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Input.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Output.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/course.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/compiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/compiler/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/config/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/compiler/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/InputDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/InputDataDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/OutputDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/OutputDataDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/VariablesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/VariablesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/TaskDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/services/mappers/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/mappers/TaskMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/utils/Template1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/utils/Template1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,19 +108,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.utils.DateParser" />
-      <module name="course" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.kinopoisk.server.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GamesParserService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.parsers.GamesParserService" />
       <module name="course" />
@@ -152,6 +134,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.course.server.TestClass" />
+      <module name="course" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.course.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.kinopoisk.server.parsers.Threads.TestThread" />
       <module name="course" />
@@ -165,15 +160,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestClass" />
         <item itemvalue="Application.CompileService" />
         <item itemvalue="Application.GamesParserService" />
         <item itemvalue="Application.IgromaniaGamesParser" />
         <item itemvalue="Application.TestThread" />
-        <item itemvalue="Application.DateParser" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +245,8 @@
       <workItem from="1607885348996" duration="806000" />
       <workItem from="1607886194352" duration="301000" />
       <workItem from="1607933301766" duration="8221000" />
-      <workItem from="1607946357286" duration="15175000" />
+      <workItem from="1607946357286" duration="15394000" />
+      <workItem from="1608016853751" duration="13095000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -359,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607885728653</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add compiler, compilerService for tasks.">
+      <created>1607962682128</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1607962682128</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +398,8 @@
     <MESSAGE value="Add games db service" />
     <MESSAGE value="Improved the performance of the game parser" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Add compiler, compilerService for tasks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add compiler, compilerService for tasks." />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -416,10 +418,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607955338098" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1607961052620">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1608029714132">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1607961052620" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1608029714132" />
     <state x="612" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605711226161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -436,54 +438,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="261" key="#toString()_Generation_Settings/0.0.1920.1040@0.0.1920.1040" timestamp="1606232093298" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1607962432894">
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432894" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1607962432894">
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.0.center" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432894" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1607962432894">
+    <state width="1877" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.0.left" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432894" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1607962432894">
+    <state width="1877" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.0.right" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432894" />
-    <state width="1877" height="278" key="GridCell.Tab.1.bottom" timestamp="1607962432895">
+    <state width="1877" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.1.bottom" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432895" />
-    <state width="1877" height="278" key="GridCell.Tab.1.center" timestamp="1607962432895">
+    <state width="1877" height="272" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.1.center" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432895" />
-    <state width="1877" height="278" key="GridCell.Tab.1.left" timestamp="1607962432894">
+    <state width="1877" height="272" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.1.left" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432894" />
-    <state width="1877" height="278" key="GridCell.Tab.1.right" timestamp="1607962432895">
+    <state width="1877" height="272" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="272" key="GridCell.Tab.1.right" timestamp="1608030372749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="278" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607962432895" />
-    <state width="1877" height="589" key="GridCell.Tab.2.bottom" timestamp="1607962210365">
+    <state width="1877" height="272" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
+    <state width="1877" height="129" key="GridCell.Tab.2.bottom" timestamp="1608029856306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="589" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607962210365" />
-    <state width="1877" height="589" key="GridCell.Tab.2.center" timestamp="1607962210365">
+    <state width="1877" height="129" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
+    <state width="1877" height="129" key="GridCell.Tab.2.center" timestamp="1608029856306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="589" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607962210365" />
-    <state width="1877" height="589" key="GridCell.Tab.2.left" timestamp="1607962210365">
+    <state width="1877" height="129" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
+    <state width="1877" height="129" key="GridCell.Tab.2.left" timestamp="1608029856306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="589" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607962210365" />
-    <state width="1877" height="589" key="GridCell.Tab.2.right" timestamp="1607962210365">
+    <state width="1877" height="129" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
+    <state width="1877" height="129" key="GridCell.Tab.2.right" timestamp="1608029856306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="589" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607962210365" />
+    <state width="1877" height="129" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1605785256843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -496,10 +498,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607885004522" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607885817945">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607962687622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607885817945" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607962687622" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -520,6 +522,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/ru/kinopoisk/server/services/gamesDbService/GamesService.java</url>
           <line>47</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

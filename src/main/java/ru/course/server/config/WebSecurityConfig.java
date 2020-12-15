@@ -80,6 +80,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers("/games/findByName").permitAll()
                 .antMatchers("/compile").permitAll()
                 .antMatchers("/createTask").permitAll()
+                .antMatchers("/removeTask/{\\d+}").permitAll()
 
 
                 .anyRequest().authenticated()

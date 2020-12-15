@@ -1,21 +1,12 @@
 package ru.course.server.persistence.domain;
 
 
-import com.vladmihalcea.hibernate.type.array.ListArrayType;
-import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name="tasks")
-@TypeDef(
-        name = "list-array",
-        typeClass = ListArrayType.class
-)
 public class Task extends LongIdEntity {
 
     @Column(name = "name",nullable = false)
@@ -34,18 +25,14 @@ public class Task extends LongIdEntity {
     @Column(name = "mainFuncType",nullable = false)
     private String mainFuncType;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "task_input", joinColumns = @JoinColumn(name = "task_id"))
-    private Set<InputDataDto> input = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    private Set<Input> input;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "task_output", joinColumns = @JoinColumn(name = "task_id"))
-    private Set<OutputDataDto> output = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    private Set<Output> output;
 
-
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "task_variables", joinColumns = @JoinColumn(name = "task_id"))
-    private Set<VariablesDto> variables = new HashSet<>();
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    private Set<Variable> variables;
 
 
     public String getName() {
@@ -88,27 +75,27 @@ public class Task extends LongIdEntity {
         this.mainFuncType = mainFuncType;
     }
 
-    public Set<InputDataDto> getInput() {
+    public Set<Input> getInput() {
         return input;
     }
 
-    public void setInput(Set<InputDataDto> input) {
+    public void setInput(Set<Input> input) {
         this.input = input;
     }
 
-    public Set<OutputDataDto> getOutput() {
+    public Set<Output> getOutput() {
         return output;
     }
 
-    public void setOutput(Set<OutputDataDto> output) {
+    public void setOutput(Set<Output> output) {
         this.output = output;
     }
 
-    public Set<VariablesDto> getVariables() {
+    public Set<Variable> getVariables() {
         return variables;
     }
 
-    public void setVariables(Set<VariablesDto> variables) {
+    public void setVariables(Set<Variable> variables) {
         this.variables = variables;
     }
 

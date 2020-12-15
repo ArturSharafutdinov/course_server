@@ -37,5 +37,11 @@ public class TaskController {
        return "error, task with this name already exists";
     }
 
+    @PostMapping("/removeTask/{id}")
+    public String remove(@PathVariable Long id){
+       taskRepository.deleteById(id);
+       return "removed";
+    }
+
 }
 

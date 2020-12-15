@@ -1,9 +1,5 @@
 package ru.course.server.persistence.dto;
 
-import ru.course.server.persistence.domain.InputDataDto;
-import ru.course.server.persistence.domain.OutputDataDto;
-import ru.course.server.persistence.domain.VariablesDto;
-
 public class TaskDto {
 
     private String name;

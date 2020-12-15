@@ -20,13 +20,13 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        try {
-            compileService.compile("Sum of two numbers","public int sum(int var1, int var2){\n" +
-                    "return var1+var2;\n" +
-                    "}");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println(compileService.compile("sum","public int sum(int firstNumber, int lastNumber){\n" +
+//                    "return firstNumber+lastNumber;\n" +
+//                    "}"));;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
