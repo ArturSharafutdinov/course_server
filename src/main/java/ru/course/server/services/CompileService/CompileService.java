@@ -26,21 +26,14 @@ public class CompileService {
         Task task = taskRepository.findByName(taskName);
 
         String classToCompile = classCreatorService.classConstruction(task,code);
-        System.out.println(classToCompile);
 
-
+      //  System.out.println(classToCompile);
 
        if(classToCompile.equals("main function changed")){
            return classToCompile;
        }
 
-
-       checkDataService.checkData(task.getInput(),task.getOutput(),task.getVariables(),classToCompile);
-
-
-
-
-        return "test";
+        return checkDataService.checkData(task.getInput(),task.getOutput(),task.getVariables(),classToCompile);
     }
 
 

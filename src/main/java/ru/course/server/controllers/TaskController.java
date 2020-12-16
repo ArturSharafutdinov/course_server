@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.course.server.persistence.dao.TaskRepository;
 import ru.course.server.persistence.domain.Task;
+import ru.course.server.persistence.dto.CodeDto;
 import ru.course.server.persistence.dto.TaskDto;
+import ru.course.server.services.CompileService.CompileService;
 import ru.course.server.services.mappers.TaskMapper;
 
 import java.io.IOException;
@@ -17,6 +19,9 @@ public class TaskController {
 
     @Autowired
     private TaskMapper taskMapper;
+
+    @Autowired
+    private CompileService compileService;
 
 //    @PostMapping("/compile")
 //    @ResponseBody
@@ -41,6 +46,13 @@ public class TaskController {
     public String remove(@PathVariable Long id){
        taskRepository.deleteById(id);
        return "removed";
+    }
+
+    @PostMapping("/task/{id}")
+    @ResponseBody
+    public String compile(@RequestBody CodeDto code, @PathVariable Long id) throws IOException {
+      return compileService.compile(taskRepository.findById(id).orElse(null).getName(),code.getCode());
+
     }
 
 }

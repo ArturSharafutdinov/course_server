@@ -38,19 +38,18 @@ public String checkData(Set<Input> input, Set<Output> output, Set<Variable> vari
                inputData+=inputIterator.next().getValue()+" ";
            }
 
-           System.out.println(inputData);
            String outputData = outputIterator.next().getValue();
            String compileResult = compiler.compile(classToCompile,inputData.trim());
-           System.out.println(compareResults(outputData.trim(),compileResult.trim()));
+          if(!compareResults(outputData.trim(),compileResult.trim())){
+              return "Не проходит тесты";
+          }
 
-           System.out.println("compile result:" + compileResult);
-           System.out.println("outputData:" +outputData);
-
-
+           System.out.println("output: "+outputData.trim());
+           System.out.println("compileResult: " + compileResult.trim());
 
        }
 
-return "ы";
+return "Все тесты успешно пройдены";
 }
 
 

@@ -81,6 +81,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/compile").permitAll()
                 .antMatchers("/createTask").permitAll()
                 .antMatchers("/removeTask/{\\d+}").permitAll()
+                .antMatchers("/task/{\\d+}").permitAll()
 
 
                 .anyRequest().authenticated()

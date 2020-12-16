@@ -20,18 +20,11 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        try {
-            System.out.println(compileService.compile("wideArray2","public int[] getArray(int digit,int[] array){\n" +
-                    "int[] result = new int[array.length+1];\n" +
-                    "for(int i=0;i<array.length;i++)\n" +
-                    "{result[i]=array[i];\n" +
-                    "}\n" +
-                    "result[array.length] = digit;\n" +
-                    "return result;\n" +
-                    "}"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println(compileService.compile("wideArray2",""));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
