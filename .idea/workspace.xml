@@ -13,27 +13,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Add compiler, compilerService for tasks.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Output.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Variable.java" afterDir="false" />
+    <list default="true" id="31394eda-ac6c-48f2-9dff-aa3e5be36507" name="Default Changelist" comment="Change input,output,variables relation to task">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CheckDataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/ClassCreatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course.iml" beforeDir="false" afterPath="$PROJECT_DIR$/course.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/compiler/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/compiler/Compiler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/config/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/config/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/controllers/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/InputDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/InputDataDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/OutputDataDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/OutputDataDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/domain/VariablesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/VariablesDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/persistence/dto/TaskDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/services/mappers/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/services/mappers/TaskMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/course/server/utils/Template1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/course/server/utils/Template1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestClass" />
         <item itemvalue="Application.CompileService" />
+        <item itemvalue="Application.TestClass" />
         <item itemvalue="Application.GamesParserService" />
         <item itemvalue="Application.IgromaniaGamesParser" />
         <item itemvalue="Application.TestThread" />
@@ -246,7 +234,9 @@
       <workItem from="1607886194352" duration="301000" />
       <workItem from="1607933301766" duration="8221000" />
       <workItem from="1607946357286" duration="15394000" />
-      <workItem from="1608016853751" duration="13095000" />
+      <workItem from="1608016853751" duration="13295000" />
+      <workItem from="1608043329676" duration="3031000" />
+      <workItem from="1608099731969" duration="8454000" />
     </task>
     <task id="LOCAL-00001" summary="Add parser, entities and models for page news">
       <created>1605623124562</created>
@@ -360,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607962682128</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Change input,output,variables relation to task">
+      <created>1608030809867</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608030809867</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +396,8 @@
     <MESSAGE value="Improved the performance of the game parser" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add compiler, compilerService for tasks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add compiler, compilerService for tasks." />
+    <MESSAGE value="Change input,output,variables relation to task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change input,output,variables relation to task" />
   </component>
   <component name="WindowStateProjectService">
     <state x="859" y="411" width="729" height="217" key="#Assign_Data_Sources" timestamp="1605623080308">
@@ -438,54 +436,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="745" y="261" key="#toString()_Generation_Settings/0.0.1920.1040@0.0.1920.1040" timestamp="1606232093298" />
-    <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.0.bottom" timestamp="1608108422222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.0.center" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422222" />
+    <state width="1877" height="468" key="GridCell.Tab.0.center" timestamp="1608108422222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.0.left" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422222" />
+    <state width="1877" height="468" key="GridCell.Tab.0.left" timestamp="1608108422222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.0.right" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422222" />
+    <state width="1877" height="468" key="GridCell.Tab.0.right" timestamp="1608108422222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.1.bottom" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422222" />
+    <state width="1877" height="468" key="GridCell.Tab.1.bottom" timestamp="1608108422223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.1.center" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422223" />
+    <state width="1877" height="468" key="GridCell.Tab.1.center" timestamp="1608108422223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.1.left" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422223" />
+    <state width="1877" height="468" key="GridCell.Tab.1.left" timestamp="1608108422222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="272" key="GridCell.Tab.1.right" timestamp="1608030372749">
+    <state width="1877" height="468" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422222" />
+    <state width="1877" height="468" key="GridCell.Tab.1.right" timestamp="1608108422223">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608030372749" />
-    <state width="1877" height="129" key="GridCell.Tab.2.bottom" timestamp="1608029856306">
+    <state width="1877" height="468" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608108422223" />
+    <state width="1877" height="439" key="GridCell.Tab.2.bottom" timestamp="1608104068958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="129" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
-    <state width="1877" height="129" key="GridCell.Tab.2.center" timestamp="1608029856306">
+    <state width="1877" height="439" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1608104068958" />
+    <state width="1877" height="439" key="GridCell.Tab.2.center" timestamp="1608104068958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="129" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
-    <state width="1877" height="129" key="GridCell.Tab.2.left" timestamp="1608029856306">
+    <state width="1877" height="439" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1608104068958" />
+    <state width="1877" height="439" key="GridCell.Tab.2.left" timestamp="1608104068958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="129" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
-    <state width="1877" height="129" key="GridCell.Tab.2.right" timestamp="1608029856306">
+    <state width="1877" height="439" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1608104068958" />
+    <state width="1877" height="439" key="GridCell.Tab.2.right" timestamp="1608104068958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="129" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608029856306" />
+    <state width="1877" height="439" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1608104068958" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1605785256843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -498,10 +496,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1607885004522" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607962687622">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608030815766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607962687622" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608030815766" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1605621125244">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -525,18 +523,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/TestClass.java</url>
-          <line>21</line>
+          <line>12</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/course/server/services/CompileService/CompileService.java</url>
-          <line>160</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

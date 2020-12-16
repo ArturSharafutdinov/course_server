@@ -59,7 +59,7 @@ public class Compiler {
                         break;
                     }
                     else{
-                        res+=temp;
+                        res+=temp+"\n";
                     }
                 }
             }

@@ -25,13 +25,13 @@ public class Task extends LongIdEntity {
     @Column(name = "mainFuncType",nullable = false)
     private String mainFuncType;
 
-    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "task")
     private Set<Input> input;
 
-    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "task")
     private Set<Output> output;
 
-    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "task")
+    @OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "task")
     private Set<Variable> variables;
 
 

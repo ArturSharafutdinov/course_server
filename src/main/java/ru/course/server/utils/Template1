@@ -6,6 +6,7 @@ mainFuncPlace
 
 public static void main(String[] args){
 
+converters
 
 SampleClass sampleClass = new SampleClass();
 
